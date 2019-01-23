@@ -28,3 +28,5 @@ gc.nim(109)              decRef
 make: *** [test] Error 1
 ```
 
+In other cases, I've seen different errors (e.g. "incRef: interior pointer").
+
