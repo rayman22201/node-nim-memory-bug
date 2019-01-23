@@ -1,0 +1,16 @@
+{
+  "name": "hellolib",
+  "version": "0.1.0",
+  "description": "Node.js Bindings to C Hello lib",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "private": true,
+  "gypfile": true,
+  "dependencies": {
+    "node-addon-api": "^1.6.2"
+  },
+  "devDependencies": {
+    "@types/node": "^10.12.18",
+    "typescript": "^3.2.2"
+  }
+}
