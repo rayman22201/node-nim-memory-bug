@@ -1,4 +1,4 @@
-This demonstrates a bug I keep finding while trying to make a Node native add-on using Nim as the C-code generator.
+This demonstrates a bug I keep finding while trying to make a Node native addon using Nim as the C-code generator.
 
 Requirements:
 
@@ -16,6 +16,16 @@ make test
 
 This will delete and regenerate files in `csrc/`, `build/`, `lib/` and `dist/`.  I've committed my versions of `dist/` and `csrc/` to the repo for reference.
 
+## Important files
+
+- `jssrc/test.ts` - TypeScript code that's run when you do `make test`
+- `jssrc/main.ts` - JS module imported by `test.ts` and which wraps the native Node addon
+- `clib.nim` - My C library which provides an echo function
+- `jstonimbinding.cpp` - Some C++ code that uses `node-addon-api` to wrap the C library into a form Node can consume
+- `binding.gyp` - The magical incantation that compiles the Node addon.
+
+## My output
+
 On my computer, running this produces a ton of output, ending with:
 
 ```
@@ -29,4 +39,6 @@ make: *** [test] Error 1
 ```
 
 In other cases, I've seen different errors (e.g. "incRef: interior pointer").
+
+
 
