@@ -21,10 +21,10 @@
 #undef unix
 struct NimStringDesc;
 struct TGenericSeq;
-struct tyObject_LoggercolonObjectType__9bhietBQiofDPLK3sBa0qPQ;
-struct RootObj;
 struct TNimType;
 struct TNimNode;
+struct tyObject_LoggercolonObjectType__9bhietBQiofDPLK3sBa0qPQ;
+struct RootObj;
 struct tyObject_RollingFileLoggercolonObjectType__RVbeT0aVEu0OfdbVn1KX0g;
 struct tyObject_FileLoggercolonObjectType__IRs4hY6GNcXZ1akep9cf7jA;
 struct tyObject_ConsoleLoggercolonObjectType__4w707i5soOx7A2LWkxurNA;
@@ -35,8 +35,7 @@ NI reserved;
 struct NimStringDesc : public TGenericSeq {
 NIM_CHAR data[SEQ_DECL_SIZE];
 };
-typedef NimStringDesc* tyArray_nHXaesL0DJZHyVS07ARPRA[1];
-typedef NU8 tyEnum_Level_pW4mH4lipH6u2NKDGEWdGg;
+typedef NimStringDesc* tyArray_Re75IspeoxXy2oCZHwcRrA[2];
 typedef NU8 tyEnum_TNimKind_jIBKr1ejBgsfM33Kxw4j7A;
 typedef NU8 tySet_tyEnum_TNimTypeFlag_v8QUszD1sWlSIWZz7mC4bQ;
 typedef N_NIMCALL_PTR(void, tyProc_ojoeKfW4VYIm36I9cpDTQIg) (void* p, NI op);
@@ -51,13 +50,6 @@ void* finalizer;
 tyProc_ojoeKfW4VYIm36I9cpDTQIg marker;
 tyProc_WSm2xU5ARYv9aAR4l0z9c9auQ deepcopy;
 };
-struct RootObj {
-TNimType* m_type;
-};
-struct tyObject_LoggercolonObjectType__9bhietBQiofDPLK3sBa0qPQ : public RootObj {
-tyEnum_Level_pW4mH4lipH6u2NKDGEWdGg levelThreshold;
-NimStringDesc* fmtStr;
-};
 typedef NU8 tyEnum_TNimNodeKind_unfNsxrcATrufDZmpBq4HQ;
 struct TNimNode {
 tyEnum_TNimNodeKind_unfNsxrcATrufDZmpBq4HQ kind;
@@ -67,8 +59,21 @@ NCSTRING name;
 NI len;
 TNimNode** sons;
 };
-N_NIMCALL(void, echoBinSafe)(NimStringDesc** args, NI argsLen_0);
+typedef NimStringDesc* tyArray_nHXaesL0DJZHyVS07ARPRA[1];
+typedef NU8 tyEnum_Level_pW4mH4lipH6u2NKDGEWdGg;
+struct RootObj {
+TNimType* m_type;
+};
+struct tyObject_LoggercolonObjectType__9bhietBQiofDPLK3sBa0qPQ : public RootObj {
+tyEnum_Level_pW4mH4lipH6u2NKDGEWdGg levelThreshold;
+NimStringDesc* fmtStr;
+};
 N_NIMCALL(NCSTRING, hello_echo)(NCSTRING message);
+static N_INLINE(void, nimZeroMem)(void* p, NI size);
+static N_INLINE(void, nimSetMem_cNwQQ4PlSJsZSwvoN5Uafwsystem)(void* a, int v, NI size);
+N_NIMCALL(NimStringDesc*, copyString)(NimStringDesc* src);
+N_NIMCALL(NimStringDesc*, reprAny)(void* p, TNimType* typ);
+N_NIMCALL(void, echoBinSafe)(NimStringDesc** args, NI argsLen_0);
 N_NIMCALL(NimStringDesc*, rawNewString)(NI space);
 N_NIMCALL(NimStringDesc*, rawNewString)(NI cap);
 N_LIB_PRIVATE N_NIMCALL(void, add_XyS0BXa1E5ylXzhvUQlY9cg)(NimStringDesc*& x, NCSTRING y);
@@ -76,13 +81,16 @@ static N_INLINE(void, appendString)(NimStringDesc* dest, NimStringDesc* src);
 static N_INLINE(void, copyMem_E1xtACub5WcDa3vbrIXbwgsystem)(void* dest, void* source, NI size);
 static N_INLINE(void, nimCopyMem)(void* dest, void* source, NI size);
 N_NIMCALL(NimStringDesc*, resizeString)(NimStringDesc* dest, NI addlen);
+N_NIMCALL(NimStringDesc*, reprStr)(NimStringDesc* s);
 static N_INLINE(NCSTRING, nimToCStringConv)(NimStringDesc* s);
-static N_INLINE(void, nimZeroMem)(void* p, NI size);
-static N_INLINE(void, nimSetMem_cNwQQ4PlSJsZSwvoN5Uafwsystem)(void* a, int v, NI size);
-N_NIMCALL(NimStringDesc*, copyString)(NimStringDesc* src);
+N_NIMCALL(void, nimGCref)(void* p);
 static N_INLINE(void, nimFrame)(TFrame* s);
 N_LIB_PRIVATE N_NOINLINE(void, callDepthLimitReached_II46IjNZztN9bmbxUD8dt8g)(void);
 static N_INLINE(void, popFrame)(void);
+N_NIMCALL(void, hello_release)(NCSTRING x);
+static N_INLINE(size_t, nimCStrLen)(NCSTRING a);
+N_NIMCALL(NimStringDesc*, nimIntToStr)(NI x);
+N_NIMCALL(void, nimGCunref)(void* p);
 static N_INLINE(void, initStackBottomWith)(void* locals);
 N_NOINLINE(void, nimGC_setStackBottom)(void* theStackBottom);
 N_NIMCALL(void, chckNilDisp)(void* p);
@@ -103,6 +111,7 @@ N_LIB_PRIVATE N_NIMCALL(void, stdlib_osInit000)(void);
 N_LIB_PRIVATE N_NIMCALL(void, stdlib_loggingDatInit000)(void);
 N_LIB_PRIVATE N_NIMCALL(void, stdlib_loggingInit000)(void);
 N_LIB_PRIVATE N_NIMCALL(void, NimMainModule)(void);
+extern TNimType NTI_S9agCYBinaYZnGWcjTdxclg_;
 extern TFrame* framePtr_HRfVMH3jYeBJz6Q6X9b6Ptw;
 extern TFrame* framePtr_HRfVMH3jYeBJz6Q6X9b6Ptw;
 extern TFrame* framePtr_HRfVMH3jYeBJz6Q6X9b6Ptw;
@@ -111,15 +120,28 @@ extern TFrame* framePtr_HRfVMH3jYeBJz6Q6X9b6Ptw;
 extern TFrame* framePtr_HRfVMH3jYeBJz6Q6X9b6Ptw;
 extern TNimType NTI_RVbeT0aVEu0OfdbVn1KX0g_;
 extern TNimType NTI_IRs4hY6GNcXZ1akep9cf7jA_;
-static TNimType* Nim_OfCheck_CACHE7[2];
+static TNimType* Nim_OfCheck_CACHE11[2];
 extern TNimType NTI_4w707i5soOx7A2LWkxurNA_;
 extern TNimType NTI_9bhietBQiofDPLK3sBa0qPQ_;
-static TNimType* Nim_OfCheck_CACHE8[2];
-STRING_LITERAL(TM_M6NC2A5LzDhCH7omMS7LSg_3, "clib initialized", 16);
-NIM_CONST tyArray_nHXaesL0DJZHyVS07ARPRA TM_M6NC2A5LzDhCH7omMS7LSg_2 = {((NimStringDesc*) &TM_M6NC2A5LzDhCH7omMS7LSg_3)}
-;
-STRING_LITERAL(TM_M6NC2A5LzDhCH7omMS7LSg_4, " echo", 5);
-STRING_LITERAL(TM_M6NC2A5LzDhCH7omMS7LSg_5, "Nim echo result: ", 17);
+static TNimType* Nim_OfCheck_CACHE12[2];
+STRING_LITERAL(TM_M6NC2A5LzDhCH7omMS7LSg_2, "Nim message addr    : ", 22);
+STRING_LITERAL(TM_M6NC2A5LzDhCH7omMS7LSg_3, " echo", 5);
+STRING_LITERAL(TM_M6NC2A5LzDhCH7omMS7LSg_4, "Nim res repr        : ", 22);
+STRING_LITERAL(TM_M6NC2A5LzDhCH7omMS7LSg_5, "Nim result addr     : ", 22);
+STRING_LITERAL(TM_M6NC2A5LzDhCH7omMS7LSg_6, "Nim echo result     : ", 22);
+STRING_LITERAL(TM_M6NC2A5LzDhCH7omMS7LSg_7, "x.len: ", 7);
+STRING_LITERAL(TM_M6NC2A5LzDhCH7omMS7LSg_8, "Nim release         : ", 22);
+STRING_LITERAL(TM_M6NC2A5LzDhCH7omMS7LSg_9, "Nim release it      : ", 22);
+
+static N_INLINE(void, nimSetMem_cNwQQ4PlSJsZSwvoN5Uafwsystem)(void* a, int v, NI size) {
+	void* T1_;
+	T1_ = (void*)0;
+	T1_ = memset(a, v, ((size_t) (size)));
+}
+
+static N_INLINE(void, nimZeroMem)(void* p, NI size) {
+	nimSetMem_cNwQQ4PlSJsZSwvoN5Uafwsystem(p, ((int) 0), size);
+}
 
 static N_INLINE(void, nimCopyMem)(void* dest, void* source, NI size) {
 	void* T1_;
@@ -162,16 +184,6 @@ static N_INLINE(NCSTRING, nimToCStringConv)(NimStringDesc* s) {
 	return result;
 }
 
-static N_INLINE(void, nimSetMem_cNwQQ4PlSJsZSwvoN5Uafwsystem)(void* a, int v, NI size) {
-	void* T1_;
-	T1_ = (void*)0;
-	T1_ = memset(a, v, ((size_t) (size)));
-}
-
-static N_INLINE(void, nimZeroMem)(void* p, NI size) {
-	nimSetMem_cNwQQ4PlSJsZSwvoN5Uafwsystem(p, ((int) 0), size);
-}
-
 static N_INLINE(void, nimFrame)(TFrame* s) {
 	NI T1_;
 	T1_ = (NI)0;
@@ -201,30 +213,88 @@ static N_INLINE(void, popFrame)(void) {
 
 N_NIMCALL(NCSTRING, hello_echo)(NCSTRING message) {
 	NCSTRING result;
+	tyArray_Re75IspeoxXy2oCZHwcRrA T1_;
+	NimStringDesc* res;
 	NimStringDesc* fmtRes;
-	tyArray_nHXaesL0DJZHyVS07ARPRA T1_;
+	tyArray_Re75IspeoxXy2oCZHwcRrA T2_;
+	tyArray_Re75IspeoxXy2oCZHwcRrA T3_;
+	tyArray_nHXaesL0DJZHyVS07ARPRA T4_;
 	NimStringDesc* fmtRes_2;
 	nimfr_("hello_echo", "clib.nim");
 	result = (NCSTRING)0;
-	nimln_(11, "clib.nim");
+	nimln_(9, "clib.nim");
+	nimZeroMem((void*)T1_, sizeof(tyArray_Re75IspeoxXy2oCZHwcRrA));
+	T1_[0] = copyString(((NimStringDesc*) &TM_M6NC2A5LzDhCH7omMS7LSg_2));
+	T1_[1] = reprAny(message, (&NTI_S9agCYBinaYZnGWcjTdxclg_));
+	echoBinSafe(T1_, 2);
+	nimln_(10, "clib.nim");
 	fmtRes = rawNewString(((NI) 24));
 	nimln_(268, "strformat.nim");
 	add_XyS0BXa1E5ylXzhvUQlY9cg(fmtRes, message);
-	nimln_(11, "clib.nim");
+	nimln_(10, "clib.nim");
 	fmtRes = resizeString(fmtRes, 5);
-appendString(fmtRes, ((NimStringDesc*) &TM_M6NC2A5LzDhCH7omMS7LSg_4));
-	result = nimToCStringConv(fmtRes);
+appendString(fmtRes, ((NimStringDesc*) &TM_M6NC2A5LzDhCH7omMS7LSg_3));
+	res = copyString(fmtRes);
+	nimln_(11, "clib.nim");
+	nimZeroMem((void*)T2_, sizeof(tyArray_Re75IspeoxXy2oCZHwcRrA));
+	T2_[0] = copyString(((NimStringDesc*) &TM_M6NC2A5LzDhCH7omMS7LSg_4));
+	T2_[1] = reprStr(res);
+	echoBinSafe(T2_, 2);
 	nimln_(12, "clib.nim");
-	nimZeroMem((void*)T1_, sizeof(tyArray_nHXaesL0DJZHyVS07ARPRA));
-	fmtRes_2 = rawNewString(((NI) 35));
-	fmtRes_2 = resizeString(fmtRes_2, 17);
-appendString(fmtRes_2, ((NimStringDesc*) &TM_M6NC2A5LzDhCH7omMS7LSg_5));
+	result = nimToCStringConv(res);
+	nimln_(13, "clib.nim");
+	if (res) { nimGCref(res); }
+	nimln_(14, "clib.nim");
+	nimZeroMem((void*)T3_, sizeof(tyArray_Re75IspeoxXy2oCZHwcRrA));
+	T3_[0] = copyString(((NimStringDesc*) &TM_M6NC2A5LzDhCH7omMS7LSg_5));
+	T3_[1] = reprAny(result, (&NTI_S9agCYBinaYZnGWcjTdxclg_));
+	echoBinSafe(T3_, 2);
+	nimln_(15, "clib.nim");
+	nimZeroMem((void*)T4_, sizeof(tyArray_nHXaesL0DJZHyVS07ARPRA));
+	fmtRes_2 = rawNewString(((NI) 40));
+	fmtRes_2 = resizeString(fmtRes_2, 22);
+appendString(fmtRes_2, ((NimStringDesc*) &TM_M6NC2A5LzDhCH7omMS7LSg_6));
 	nimln_(268, "strformat.nim");
 	add_XyS0BXa1E5ylXzhvUQlY9cg(fmtRes_2, result);
-	T1_[0] = copyString(fmtRes_2);
-	echoBinSafe(T1_, 1);
+	T4_[0] = copyString(fmtRes_2);
+	echoBinSafe(T4_, 1);
 	popFrame();
 	return result;
+}
+
+static N_INLINE(size_t, nimCStrLen)(NCSTRING a) {
+	size_t result;
+	result = (size_t)0;
+	result = strlen(a);
+	return result;
+}
+
+N_NIMCALL(void, hello_release)(NCSTRING x) {
+	tyArray_Re75IspeoxXy2oCZHwcRrA T1_;
+	tyArray_Re75IspeoxXy2oCZHwcRrA T2_;
+	NimStringDesc* it;
+	tyArray_Re75IspeoxXy2oCZHwcRrA T3_;
+	nimfr_("hello_release", "clib.nim");
+	nimln_(18, "clib.nim");
+	nimZeroMem((void*)T1_, sizeof(tyArray_Re75IspeoxXy2oCZHwcRrA));
+	T1_[0] = copyString(((NimStringDesc*) &TM_M6NC2A5LzDhCH7omMS7LSg_7));
+	T1_[1] = nimIntToStr((x ? nimCStrLen(x) : 0));
+	echoBinSafe(T1_, 2);
+	nimln_(19, "clib.nim");
+	nimZeroMem((void*)T2_, sizeof(tyArray_Re75IspeoxXy2oCZHwcRrA));
+	T2_[0] = copyString(((NimStringDesc*) &TM_M6NC2A5LzDhCH7omMS7LSg_8));
+	T2_[1] = reprAny(x, (&NTI_S9agCYBinaYZnGWcjTdxclg_));
+	echoBinSafe(T2_, 2);
+	nimln_(20, "clib.nim");
+	it = ((NimStringDesc*) (x));
+	nimln_(21, "clib.nim");
+	nimZeroMem((void*)T3_, sizeof(tyArray_Re75IspeoxXy2oCZHwcRrA));
+	T3_[0] = copyString(((NimStringDesc*) &TM_M6NC2A5LzDhCH7omMS7LSg_9));
+	T3_[1] = reprStr(it);
+	echoBinSafe(T3_, 2);
+	nimln_(22, "clib.nim");
+	if (it) { nimGCunref(it); }
+	popFrame();
 }
 
 static N_INLINE(void, initStackBottomWith)(void* locals) {
@@ -277,7 +347,7 @@ N_LIB_PRIVATE N_NIMCALL(void, log_3UB9b0flreHbZSduHV9cBGOA)(tyObject_Loggercolon
 	goto LA1_;
 	LA3_: ;
 	{
-		if (!((logger) && (isObjWithCache((*logger).m_type, (&NTI_IRs4hY6GNcXZ1akep9cf7jA_), Nim_OfCheck_CACHE7)))) goto LA6_;
+		if (!((logger) && (isObjWithCache((*logger).m_type, (&NTI_IRs4hY6GNcXZ1akep9cf7jA_), Nim_OfCheck_CACHE11)))) goto LA6_;
 {		if (logger) chckObj((*logger).m_type, (&NTI_IRs4hY6GNcXZ1akep9cf7jA_));
 		log_m2nFIuqvJSzncok28dY8Kg(((tyObject_FileLoggercolonObjectType__IRs4hY6GNcXZ1akep9cf7jA*) (logger)), level, args, argsLen_0);
 }	}
@@ -291,7 +361,7 @@ N_LIB_PRIVATE N_NIMCALL(void, log_3UB9b0flreHbZSduHV9cBGOA)(tyObject_Loggercolon
 	goto LA1_;
 	LA9_: ;
 	{
-		if (!((logger) && (isObjWithCache((*logger).m_type, (&NTI_9bhietBQiofDPLK3sBa0qPQ_), Nim_OfCheck_CACHE8)))) goto LA12_;
+		if (!((logger) && (isObjWithCache((*logger).m_type, (&NTI_9bhietBQiofDPLK3sBa0qPQ_), Nim_OfCheck_CACHE12)))) goto LA12_;
 {		log_2EMZHteAOCjvMWyiczAS7w(logger, level, args, argsLen_0);
 }	}
 	goto LA1_;
@@ -345,9 +415,5 @@ N_LIB_PRIVATE N_NIMCALL(void, NimMainModule)(void) {
 {
 	TFrame FR_; FR_.len = 0;
 }
-	nimfr_("clib", "clib.nim");
-	nimln_(7, "clib.nim");
-	echoBinSafe(TM_M6NC2A5LzDhCH7omMS7LSg_2, 1);
-	popFrame();
 }
 

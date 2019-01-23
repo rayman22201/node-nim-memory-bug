@@ -17,20 +17,31 @@ Value start(const CallbackInfo& info) {
 // echo
 String echo(const CallbackInfo& info) {
   Env env = info.Env();
-  std::string js_message = info[0].As<Value>().ToString().Utf8Value();
-  const char* message = js_message.c_str();
-  cout << "C++ passing message: " << message << "\n";
+  String js_message = info[0].As<String>();
+  cout << "C++ js_message addr : " << (void*)js_message << "\n";
+  const char* message = js_message.Utf8Value().c_str();
+  cout << "C++ message addr    : " << (void*)message << "\n";
+  cout << "C++ passing message : " << message << "\n";
   char* retval = hello_echo(
     (char *)(message)
   );
-  return String::New(env, retval);
+  cout << "C++ retval addr     : " << (void*)retval << "\n";
+  String result = String::New(env, retval);
+  cout << "C++ result addr     : " << (void*)result << "\n";
+  hello_release(
+    (char *)(retval)
+  );
+  return result;
+}
+
+// release
+Value release(const CallbackInfo& info) {
+
 }
 
 Object Init(Env env, Object exports) {
-  exports.Set(String::New(env, "start"),
-    Function::New(env, start));
-  exports.Set(String::New(env, "echo"),
-    Function::New(env, echo));
+  exports["start"] = Function::New(env, start);
+  exports["echo"] = Function::New(env, echo);
   return exports;
 }
 
