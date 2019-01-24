@@ -2,15 +2,15 @@ This demonstrates a bug I keep finding while trying to make a Node native addon 
 
 Requirements:
 
-- Node
-- Nim
+- Node (I'm using 11.7.0)
+- Nim (I'm using 0.19.9)
 
 To see the problem:
 
 ```
 make clean
 npm i --ignore-scripts
-make
+make NIMBASE=/path/to/your/nimbase.h
 make test
 ```
 
