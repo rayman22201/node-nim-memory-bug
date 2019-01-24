@@ -21,16 +21,16 @@ String echo(const CallbackInfo& info) {
   cout << "C++ js_message addr : " << (void*)js_message << "\n";
   const char* message = js_message.Utf8Value().c_str();
   cout << "C++ message addr    : " << (void*)message << "\n";
-  cout << "C++ passing message : " << message << "\n";
+  // cout << "C++ passing message : " << message << "\n";
   char* retval = hello_echo(
     (char *)(message)
   );
   cout << "C++ retval addr     : " << (void*)retval << "\n";
   String result = String::New(env, retval);
   cout << "C++ result addr     : " << (void*)result << "\n";
-  hello_release(
-    (char *)(retval)
-  );
+  // hello_release(
+  //   (char *)(retval)
+  // );
   return result;
 }
 

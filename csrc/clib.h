@@ -23,6 +23,5 @@
 N_NOCONV(void, signalHandler)(int sign);
 N_NIMCALL(NI, getRefcount)(void* p);
 N_NIMCALL(NCSTRING, hello_echo)(NCSTRING message);
-N_NIMCALL(void, hello_release)(NCSTRING x);
 N_CDECL(void, NimMain)(void);
 #endif /* __clib__ */

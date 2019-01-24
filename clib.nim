@@ -8,11 +8,9 @@ proc hello_echo*(message: cstring):cstring {.exportc.} =
   ## Echo a message back
   echo "Nim message addr    : ", message.repr
   var res = &"{message} echo"
-  echo "Nim res repr        : ", res.repr
-  result = res
+  echo "Nim res addr        : ", res.repr
   GC_ref(res)
-  echo "Nim result addr     : ", result.repr
-  echo &"Nim echo result     : {result}"
+  result = addr res[0]
 
 proc hello_release*(x:cstring) {.exportc.} =
   echo "x.len: ", x.len

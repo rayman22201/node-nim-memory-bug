@@ -49,7 +49,7 @@ function main() {
         return __generator(this, function (_a) {
             for (i = 0; i < 100000; i++) {
                 msg = "Hello " + i + '-'.repeat(i);
-                console.log("\n\n----START----\nJS sending: " + msg);
+                console.log("\n\n******START******\nJS sending: " + msg);
                 response = hellolib.main.echo(msg);
                 console.log("JS response: " + response);
             }

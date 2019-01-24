@@ -10341,51 +10341,6 @@ N_NIMCALL(NimStringDesc*, reprStr)(NimStringDesc* s) {
 	return result;
 }
 
-N_NIMCALL(void, nimGCref)(void* p) {
-	nimfr_("nimGCref", "gc.nim");
-	nimln_(181, "gc.nim");
-	tyObject_Cell_1zcF9cV8XIAtbN8h5HRUB8g* c = usrToCell_yB9aH5WIlwd0xkYrcdPeXrQsystem(p);
-	nimln_(182, "gc.nim");
-	add_Wcf8r6MCjrJeJ3HSYwSp0Qsystem(gch_IcYaEuuWivYAS86vFMTS3Q.additionalRoots, c);
-	nimln_(183, "gc.nim");
-	incRef_MV4BBk6J1qu70IbBxwEn4wsystem(c);
-	popFrame();
-}
-
-N_NIMCALL(void, nimGCunref)(void* p) {
-	nimfr_("nimGCunref", "gc.nim");
-	nimln_(197, "gc.nim");
-	tyObject_Cell_1zcF9cV8XIAtbN8h5HRUB8g* cell = usrToCell_yB9aH5WIlwd0xkYrcdPeXrQsystem(p);
-	nimln_(198, "gc.nim");
-	NI L = (NI)(gch_IcYaEuuWivYAS86vFMTS3Q.additionalRoots.len - ((NI) 1));
-	nimln_(199, "gc.nim");
-	NI i = L;
-	nimln_(200, "gc.nim");
-	tyObject_Cell_1zcF9cV8XIAtbN8h5HRUB8g** d = gch_IcYaEuuWivYAS86vFMTS3Q.additionalRoots.d;
-	{
-		nimln_(201, "gc.nim");
-		while (1) {
-			if (!(((NI) 0) <= i)) goto LA2;
-			nimln_(202, "gc.nim");
-			{
-				if (!(d[i] == cell)) goto LA5_;
-{				nimln_(203, "gc.nim");
-				d[i] = d[L];
-				nimln_(204, "gc.nim");
-				gch_IcYaEuuWivYAS86vFMTS3Q.additionalRoots.len -= ((NI) 1);
-				nimln_(205, "gc.nim");
-				goto LA1;
-}			}
-			LA5_: ;
-			nimln_(206, "gc.nim");
-			i -= ((NI) 1);
-		} LA2: ;
-	} LA1: ;
-	nimln_(207, "gc.nim");
-	decRef_MV4BBk6J1qu70IbBxwEn4w_2system(usrToCell_yB9aH5WIlwd0xkYrcdPeXrQsystem(p));
-	popFrame();
-}
-
 N_NIMCALL(void, chckNilDisp)(void* p) {
 	{
 		if (!(p == NIM_NIL)) goto LA3_;
