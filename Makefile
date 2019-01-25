@@ -1,7 +1,7 @@
 NIMFILES = ./clib.nim
 NIMBASE = ~/lib/Nim/lib/nimbase.h
 RELEASE_TYPE = debug
-COMMON_BUILD_FLAGS = --header --nimcache:csrc --compileOnly 
+COMMON_BUILD_FLAGS = --gc:regions --header --nimcache:csrc --compileOnly 
 
 .PHONY: clean release debug test all
 
@@ -20,7 +20,7 @@ release: $(NIMFILES)
 	nim cpp -d:release $(COMMON_BUILD_FLAGS) ./clib.nim
 
 debug: $(NIMFILES)
-	nim cpp --checks:on -d:traceGC --memTracker:on -d:memProfiler -d:lineDir -d:leakDetector -d:useSysAssert -d:useGcAssert $(COMMON_BUILD_FLAGS) ./clib.nim
+	nim cpp $(COMMON_BUILD_FLAGS) ./clib.nim # most of the flags you had here don't work with gc:regions.
 
 csrc/nimbase.h: $(NIMBASE)
 	mkdir -p csrc
